@@ -1,0 +1,88 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{fontawesome5}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{parskip}
+\usepackage{xcolor}
+
+% Section formatting
+\titleformat{\section}{
+  \large\bfseries\color{black}
+}{\thesection}{1em}{}
+\titlespacing*{\section}{0pt}{1.0em}{0.4em}
+
+% Remove paragraph indent
+\setlength{\parindent}{0pt}
+\setlist[itemize]{noitemsep, topsep=0pt, leftmargin=*}
+
+% Load contact variables from a separate file
+\input{resume-variables.tex}
+
+% Personal info command
+\newcommand{\contact}{
+  \begin{center}
+    {\LARGE \textbf{\resumeName}}\\[2pt]
+    \resumeAddress \; $|$ \; \resumePhone \; $|$ \; \href{\resumeLinkedIn}{\resumeLinkedIn} \\
+    \href{mailto:\resumeEmail}{\resumeEmail}
+  \end{center}
+  \vspace{2mm}
+  \hrule
+  \vspace{3mm}
+}
+
+\begin{document}
+
+\contact
+
+\section*{Summary}
+Results-driven professional with 5+ years of experience in software engineering, product delivery, and cross-functional collaboration. Skilled at building reliable systems, improving processes, and turning business requirements into robust applications.
+
+\section*{Experience}
+\textbf{Senior Software Engineer} \hfill \textit{Tech Company, City} \\
+\textit{June 2022 -- Present}
+\begin{itemize}
+  \item Led development of a microservices-based platform used by 50,000+ daily users.
+  \item Improved system latency by 30\% through architecture refactoring and caching strategies.
+  \item Mentored junior engineers, introduced code review standards, and coordinated agile planning.
+\end{itemize}
+
+\textbf{Software Engineer} \hfill \textit{Another Company, City} \\
+\textit{January 2019 -- May 2022}
+\begin{itemize}
+  \item Built full-stack web applications using React, Node.js, and PostgreSQL.
+  \item Automated deployment pipelines with CI/CD and container orchestration.
+  \item Collaborated with product and design teams to deliver customer-facing features.
+\end{itemize}
+
+\section*{Education}
+\textbf{Bachelor of Science in Computer Science} \hfill \textit{University Name, City} \\
+\textit{Graduated May 2018}
+\begin{itemize}
+  \item GPA: 3.8 / 4.0
+  \item Relevant coursework: Algorithms, Software Engineering, Databases, Operating Systems
+\end{itemize}
+
+\section*{Skills}
+\begin{itemize}
+  \item \textbf{Languages:} Python, Java, JavaScript, SQL
+  \item \textbf{Frameworks:} React, Node.js, Spring Boot, Django
+  \item \textbf{Tools:} Git, Docker, Kubernetes, AWS, Jenkins
+  \item \textbf{Other:} Agile, TDD, REST APIs, Microservices
+\end{itemize}
+
+\section*{Projects}
+\textbf{Project Name} \hfill \textit{Personal / Open Source}
+\begin{itemize}
+  \item Developed an application that automates data extraction and reporting for small businesses.
+  \item Implemented authentication, responsive UI, and REST API integrations.
+\end{itemize}
+
+\section*{Certifications}
+\begin{itemize}
+  \item AWS Certified Solutions Architect -- Associate
+  \item Certified ScrumMaster (CSM)
+\end{itemize}
+
+\end{document}
