@@ -1,88 +1,105 @@
-\documentclass[11pt,a4paper]{article}
-\usepackage[margin=1in]{geometry}
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=0.6in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
 \usepackage{fontawesome5}
 \usepackage[hidelinks]{hyperref}
 \usepackage{enumitem}
 \usepackage{titlesec}
 \usepackage{parskip}
 \usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage{array}
 
-% Section formatting
-\titleformat{\section}{
-  \large\bfseries\color{black}
-}{\thesection}{1em}{}
-\titlespacing*{\section}{0pt}{1.0em}{0.4em}
-
-% Remove paragraph indent
+\pagestyle{empty}
+\renewcommand{\baselinestretch}{0.8}
 \setlength{\parindent}{0pt}
-\setlist[itemize]{noitemsep, topsep=0pt, leftmargin=*}
+\setlength{\parskip}{0pt}
+\setlist[itemize]{leftmargin=1.4em, itemsep=0.02em, topsep=0.01em, parsep=0pt}
 
-% Load contact variables from a separate file
+\newcommand{\jobseparator}{\vspace{0.45em}}
+
+\titleformat{\section}{\bfseries\Large\MakeUppercase}{}{0pt}{}
+\titlespacing*{\section}{0pt}{0.7em}{0.3em}
+
 \input{resume-variables.tex}
 
-% Personal info command
-\newcommand{\contact}{
+\newcommand{\contactheader}{
   \begin{center}
-    {\LARGE \textbf{\resumeName}}\\[2pt]
-    \resumeAddress \; $|$ \; \resumePhone \; $|$ \; \href{\resumeLinkedIn}{\resumeLinkedIn} \\
-    \href{mailto:\resumeEmail}{\resumeEmail}
+    {\fontsize{24}{28}\selectfont\bfseries \resumeName\\[0.35em]}
+    {\large
+      \faPhone\ \resumePhone\ \hspace{0.5em} \textbullet\ \hspace{0.5em} \resumeAddress\\
+      Contact me at \href{mailto:\resumeEmail}{\resumeEmail} or click \href{\resumeLinkedIn}{here} to connect
+      \href{\resumeLinkedIn}{\colorbox{blue!70}{\textcolor{white}{\bfseries in}}}
+    }
   \end{center}
-  \vspace{2mm}
-  \hrule
-  \vspace{3mm}
+  \vspace{0.2em}
+}
+
+\newcommand{\sectionrule}{\noindent\rule{\linewidth}{0.4pt}} 
+
+\newcommand{\job}[6]{%
+  {\textbf{#1}}\hfill{\textit{#2}}\\
+  {#3}\hfill{\textit{#4}}\\
+  \begin{itemize}
+    #5
+  \end{itemize}
+}
+
+\newcommand{\edu}[4]{%
+  {\textbf{#1}}\hfill{\textit{#2}}\\
+  {#3}\\
 }
 
 \begin{document}
 
-\contact
+\contactheader
 
-\section*{Summary}
-Results-driven professional with 5+ years of experience in software engineering, product delivery, and cross-functional collaboration. Skilled at building reliable systems, improving processes, and turning business requirements into robust applications.
+\noindent\textbf{Cloud solution architect} with 15+ years designing scalable, secure, and cloud-native platforms for enterprise and regulated environments. Brings a product mindset to architecture: translating business needs into resilient systems, guiding high-impact delivery at scale, and enabling teams to build software that is reliable, measurable, and easy to evolve.
 
 \section*{Experience}
-\textbf{Senior Software Engineer} \hfill \textit{Tech Company, City} \\
-\textit{June 2022 -- Present}
-\begin{itemize}
-  \item Led development of a microservices-based platform used by 50,000+ daily users.
-  \item Improved system latency by 30\% through architecture refactoring and caching strategies.
-  \item Mentored junior engineers, introduced code review standards, and coordinated agile planning.
-\end{itemize}
+\sectionrule
 
-\textbf{Software Engineer} \hfill \textit{Another Company, City} \\
-\textit{January 2019 -- May 2022}
-\begin{itemize}
-  \item Built full-stack web applications using React, Node.js, and PostgreSQL.
-  \item Automated deployment pipelines with CI/CD and container orchestration.
-  \item Collaborated with product and design teams to deliver customer-facing features.
-\end{itemize}
+\job{Senior Cloud Solution Architect / Domain Leader}{2024 -- Present}{KPMG AG}{Zürich, CH}{
+  \item Lead cloud and platform strategy across multiple business domains, modernizing critical systems and improving scalability, reliability, and delivery velocity for high-impact workloads
+  \item Design end-to-end cloud-native solutions from concept through production, balancing business priorities, security, cost, resilience, and technical feasibility in regulated environments
+  \item Partner closely with engineering teams to define platform patterns, reduce technical debt, and improve developer productivity, service quality, and change throughput
+  \item Drive application portfolio simplification and consolidation across merging organizations, enabling better integration, lower operating cost, and stronger governance at cloud scale
+  \item Influence senior stakeholders and cross-functional teams to align priorities, de-risk decisions, and deliver strategic transformation with measurable business value
+}{ }
+\jobseparator
+
+\job{Cloud Solutions Architect, Manager}{2022 -- 2024}{KPMG AG}{Zürich, CH}{
+  \item Design and deliver scalable cloud architecture solutions for business-critical applications, improving usability, performance, and operational efficiency across enterprise workflows
+  \item Optimize systems through modernization, automation, and performance tuning to reduce operational risk while increasing reliability, resilience, and user experience
+  \item Guide engineering teams on architectural standards, trade-offs, and implementation strategy, enabling secure, efficient execution across cloud, platform, and product workstreams
+  \item Build reusable reference patterns, governance assets, and operating models that improve consistency, onboarding, and delivery quality across distributed teams
+  \item Champion Agile delivery, DevOps practices, and continuous improvement, helping teams ship faster with stronger automation and operational discipline
+}{ }
+\jobseparator
+
+\job{Software Engineer / Cloud IT Architect}{2020 -- 2022}{Monext, Crédit Mutuel -- Arkéa}{Aix-en-Provence, FR}{
+  \item Define architecture and software patterns for scalable, secure, cloud-first systems supporting critical business services and customer workflows
+  \item Drive cloud governance, CI/CD automation, and DevOps enablement to improve deployment quality, security, and platform operational excellence
+  \item Coordinate architecture and delivery across multiple workstreams, aligning scope, technical trade-offs, and stakeholder expectations to deliver business value on schedule
+  \item Improve pipeline reliability and infrastructure automation to reduce deployment friction, accelerate release cadence, and strengthen system resiliency
+  \item Evaluate emerging cloud platforms and technologies to guide modernization, support innovation, and align delivery with long-term product goals
+}{ }
 
 \section*{Education}
-\textbf{Bachelor of Science in Computer Science} \hfill \textit{University Name, City} \\
-\textit{Graduated May 2018}
-\begin{itemize}
-  \item GPA: 3.8 / 4.0
-  \item Relevant coursework: Algorithms, Software Engineering, Databases, Operating Systems
-\end{itemize}
+\sectionrule
+
+\edu{Master in Computer Science, Systems \& Networks}{2009}{Claude Bernard University, Lyon (France)}{}
 
 \section*{Skills}
-\begin{itemize}
-  \item \textbf{Languages:} Python, Java, JavaScript, SQL
-  \item \textbf{Frameworks:} React, Node.js, Spring Boot, Django
-  \item \textbf{Tools:} Git, Docker, Kubernetes, AWS, Jenkins
-  \item \textbf{Other:} Agile, TDD, REST APIs, Microservices
-\end{itemize}
+\sectionrule
 
-\section*{Projects}
-\textbf{Project Name} \hfill \textit{Personal / Open Source}
-\begin{itemize}
-  \item Developed an application that automates data extraction and reporting for small businesses.
-  \item Implemented authentication, responsive UI, and REST API integrations.
-\end{itemize}
-
-\section*{Certifications}
-\begin{itemize}
-  \item AWS Certified Solutions Architect -- Associate
-  \item Certified ScrumMaster (CSM)
-\end{itemize}
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}l X@{}}
+Cloud Solution Architecture & Distributed systems, platform design, trade-off analysis, modernization strategy, business-to-technology translation \\
+Cloud Platform Engineering & AWS, Microsoft Azure, Databricks, Kubernetes, Terraform, Crossplane, ArgoCD, GitLab \\
+Programming Languages & Python, C\#, Java, backend and cloud platform design \\
+DevOps \\ Reliability & CI/CD, automation, infrastructure as code, observability, secure deployment patterns \\
+Systems Administration & Linux, IBM AIX, Windows, production operations, incident response, environment hardening \\
+\end{tabularx}
 
 \end{document}
