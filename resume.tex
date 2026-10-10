@@ -22,21 +22,21 @@
 \titleformat{\section}{\bfseries\Large\MakeUppercase}{}{0pt}{}
 \titlespacing*{\section}{0pt}{0.7em}{0.3em}
 
-\input{resume-variables.tex}
+\input{personal-info.tex}
 
 \newcommand{\contactheader}{
   \begin{center}
-    {\fontsize{24}{28}\selectfont\bfseries \resumeName\\[0.35em]}
+    {\fontsize{24}{28}\selectfont\bfseries \personNameUpper\\[0.35em]}
     {\large
-      \faPhone\ \resumePhone\ \hspace{0.5em} \textbullet\ \hspace{0.5em} \resumeAddress\\
-      Contact me at \href{mailto:\resumeEmail}{\resumeEmail} or click \href{\resumeLinkedIn}{here} to connect
-      \href{\resumeLinkedIn}{\colorbox{blue!70}{\textcolor{white}{\bfseries in}}}
+      \faPhone\ \personPhone\ \hspace{0.5em} \textbullet\ \hspace{0.5em} \personAddress\\
+      Contact me at \href{mailto:\personEmail}{\personEmail} or click \href{\personLinkedIn}{here} to connect
+      \href{\personLinkedIn}{\faLinkedin}
     }
   \end{center}
   \vspace{0.2em}
 }
 
-\newcommand{\sectionrule}{\noindent\rule{\linewidth}{0.4pt}} 
+\newcommand{\sectionrule}{\noindent\rule{\linewidth}{0.4pt}\par\vspace{0.24em}}
 
 \newcommand{\job}[6]{%
   {\textbf{#1}}\hfill{\textit{#2}}\\
@@ -55,21 +55,23 @@
 
 \contactheader
 
-\noindent\textbf{Cloud solution architect} with 15+ years designing scalable, secure, and cloud-native platforms for enterprise and regulated environments. Brings a product mindset to architecture: translating business needs into resilient systems, guiding high-impact delivery at scale, and enabling teams to build software that is reliable, measurable, and easy to evolve.
+\noindent\textbf{Cloud solution architect} with 18+ years across IT infrastructure engineering and enterprise architecture, designing scalable platforms for enterprise and regulated environments. Brings a product mindset to architecture: translating business needs into resilient systems, guiding delivery, and balancing security, reliability, cost, and maintainability.
 
 \section*{Experience}
 \sectionrule
 
-\job{Senior Cloud Solution Architect / Domain Leader}{2024 -- Present}{KPMG AG}{Zürich, CH}{
-  \item Lead cloud and platform strategy across multiple business domains, modernizing critical systems and improving scalability, reliability, and delivery velocity for high-impact workloads
-  \item Design end-to-end cloud-native solutions from concept through production, balancing business priorities, security, cost, resilience, and technical feasibility in regulated environments
-  \item Partner closely with engineering teams to define platform patterns, reduce technical debt, and improve developer productivity, service quality, and change throughput
-  \item Drive application portfolio simplification and consolidation across merging organizations, enabling better integration, lower operating cost, and stronger governance at cloud scale
-  \item Influence senior stakeholders and cross-functional teams to align priorities, de-risk decisions, and deliver strategic transformation with measurable business value
+\job{Domain Architect, Senior Manager}{2024 -- Present}{KPMG AG}{Zürich, CH}{
+  \item Lead application portfolio strategy across three business domains, aligning platform direction with enterprise architecture principles and business priorities
+  \item Modernize legacy integrations that relied on file uploads and direct database connections by designing and implementing Azure Data Factory pipelines that decouple consuming applications from producer APIs
+  \item Define integration contracts and behavior, including pagination, error handling, and authentication, to improve reliability and maintainability across producer-consumer boundaries
+  \item Publish APIs for a critical audit-portfolio application and design authentication and authorization patterns in Azure API Management, establishing a foundation for KPMG's agentic audit solution
+  \item Design data products for customer applications, supporting automation routines and quality-control reporting
+  \item Guide solution design and implementation, balancing business needs, security, compliance, resilience, cost, and technical constraints; manage architecture risks and technical debt
+  \item Coordinate application portfolio consolidation for two merging KPMG entities and advise senior stakeholders on priorities, trade-offs, and delivery decisions
 }{ }
 \jobseparator
 
-\job{Cloud Solutions Architect, Manager}{2022 -- 2024}{KPMG AG}{Zürich, CH}{
+\job{Solutions Architect, Manager}{2022 -- 2024}{KPMG AG}{Zürich, CH}{
   \item Design and deliver scalable cloud architecture solutions for business-critical applications, improving usability, performance, and operational efficiency across enterprise workflows
   \item Optimize systems through modernization, automation, and performance tuning to reduce operational risk while increasing reliability, resilience, and user experience
   \item Guide engineering teams on architectural standards, trade-offs, and implementation strategy, enabling secure, efficient execution across cloud, platform, and product workstreams
@@ -78,28 +80,64 @@
 }{ }
 \jobseparator
 
-\job{Software Engineer / Cloud IT Architect}{2020 -- 2022}{Monext, Crédit Mutuel -- Arkéa}{Aix-en-Provence, FR}{
+\job{IT Architect}{2020 -- 2022}{Monext, Crédit Mutuel -- Arkéa}{Aix-en-Provence, FR}{
   \item Define architecture and software patterns for scalable, secure, cloud-first systems supporting critical business services and customer workflows
   \item Drive cloud governance, CI/CD automation, and DevOps enablement to improve deployment quality, security, and platform operational excellence
   \item Coordinate architecture and delivery across multiple workstreams, aligning scope, technical trade-offs, and stakeholder expectations to deliver business value on schedule
   \item Improve pipeline reliability and infrastructure automation to reduce deployment friction, accelerate release cadence, and strengthen system resiliency
   \item Evaluate emerging cloud platforms and technologies to guide modernization, support innovation, and align delivery with long-term product goals
 }{ }
+\jobseparator
+
+\job{Systems Engineer}{2016 -- 2020}{Monext, Crédit Mutuel -- Arkéa}{Aix-en-Provence, FR}{
+  \item Administered systems, virtualization, and storage infrastructure; automated procedures and maintained operational documentation
+  \item Supported PCI-DSS compliance and enforcement, Level 3 incident analysis, capacity planning, reporting, and project delivery
+}{ }
+\jobseparator
+
+\job{Systems and Network Administrator}{2013 -- 2016}{Tessi Technologies -- Tessi}{Bordeaux, FR}{
+  \item Administered systems, virtualization, storage, and backup; automated procedures and handled Level 3 incidents and capacity reporting
+  \item Contributed infrastructure designs and estimates for pre-sales projects and tenders
+}{ }
+\jobseparator
+
+\job{Systems, Network and Security Consultant}{2009 -- 2013}{Business Geografic -- CIRIL Group}{Lyon, FR}{
+  \item Administered systems, networks, virtualization, and storage; implemented firewall security rules and provided client consulting and training
+  \item Performed Level 2/3 incident analysis
+}{ }
+\jobseparator
+
+\job{Systems Engineer (Trainee)}{2008 -- 2009}{Atos Worldline}{Lyon, FR}{
+  \item Supported Linux administration, software delivery operations, project management, and Level 3 incident analysis
+}{ }
+\jobseparator
+
+\job{Network Administrator (Trainee)}{Apr -- Jun 2005}{University of Oklahoma}{Norman, US}{
+  \item Developed an HTML/PHP web user portal and evaluated and automated Cisco firewall security rules
+}{ }
 
 \section*{Education}
 \sectionrule
 
-\edu{Master in Computer Science, Systems \& Networks}{2009}{Claude Bernard University, Lyon (France)}{}
+\edu{Master in Computer Science, Systems \& Networks}{2008 -- 2009}{Université Claude Bernard Lyon I, Lyon, France}{}
+\edu{Bachelor, Computer Science}{2006 -- 2007}{Université de Clermont-Ferrand, France}{}
+\edu{Bachelor of Science, Computer Science}{2005 -- 2006}{Robert Gordon University, Aberdeen, UK}{}
+\edu{HND, Telecommunications \& Networks}{2002 -- 2005}{Université de Clermont-Ferrand, France}{}
 
 \section*{Skills}
 \sectionrule
 
 \begin{tabularx}{\textwidth}{@{}>{\bfseries}l X@{}}
 Cloud Solution Architecture & Distributed systems, platform design, trade-off analysis, modernization strategy, business-to-technology translation \\
-Cloud Platform Engineering & AWS, Microsoft Azure, Databricks, Kubernetes, Terraform, Crossplane, ArgoCD, GitLab \\
+Cloud Platform Engineering & Microsoft Azure, Azure Data Factory, Azure API Management, AWS, Databricks, Kubernetes, Terraform, Crossplane \\
+Integration and APIs & API contracts, pagination, error handling, authentication and authorization, producer-consumer decoupling, data products \\
 Programming Languages & Python, C\#, Java, backend and cloud platform design \\
-DevOps \\ Reliability & CI/CD, automation, infrastructure as code, observability, secure deployment patterns \\
+DevOps \\ Reliability & CI/CD, ArgoCD, GitLab, automation, infrastructure as code, cloud governance \\
 Systems Administration & Linux, IBM AIX, Windows, production operations, incident response, environment hardening \\
 \end{tabularx}
+
+\section*{Languages}
+\sectionrule
+French (native) \textbullet\ English (C1; IELTS 7) \textbullet\ German (B1)
 
 \end{document}

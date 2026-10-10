@@ -1,0 +1,131 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=0.6in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{fontawesome5}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage{array}
+
+\pagestyle{empty}
+\renewcommand{\baselinestretch}{0.92}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlist[itemize]{leftmargin=1.4em, itemsep=0.08em, topsep=0.04em, parsep=0pt}
+
+\titleformat{\section}{\bfseries\Large\MakeUppercase}{}{0pt}{}
+\titlespacing*{\section}{0pt}{0.85em}{0.35em}
+
+\input{personal-info.tex}
+
+\newcommand{\contactheader}{%
+  \begin{center}
+    {\fontsize{24}{28}\selectfont\bfseries \personNameUpper\\[0.35em]}
+    {\large
+      \faPhone\ \personPhone\ \hspace{0.5em} \textbullet\ \hspace{0.5em} \personAddress\\
+      \href{mailto:\personEmail}{\personEmail} \hspace{0.5em}\textbullet\hspace{0.5em}
+      \href{\personLinkedIn}{LinkedIn}
+    }
+  \end{center}
+  \vspace{0.2em}
+}
+
+\newcommand{\sectionrule}{\noindent\rule{\linewidth}{0.4pt}\par\vspace{0.24em}}
+\newcommand{\jobseparator}{\vspace{0.45em}}
+\newcommand{\job}[5]{%
+  {\textbf{#1}}\hfill{\textit{#2}}\\
+  {#3}\hfill{\textit{#4}}\\
+  \begin{itemize}
+    #5
+  \end{itemize}
+}
+
+\begin{document}
+
+\contactheader
+
+\noindent\textbf{Cloud and solution architect} with 18+ years across IT infrastructure engineering and enterprise architecture, specializing in API-led integration, data-ingestion modernization, cloud platforms, and regulated delivery. Experienced in translating business needs into secure, maintainable solutions and guiding delivery across engineering and business teams.
+
+\section*{Experience}
+\sectionrule
+
+\job{Domain Architect, Senior Manager}{2024 -- Present}{KPMG AG}{Zürich, CH}{
+  \item Lead application portfolio strategy across three business domains, aligning platform direction with enterprise architecture principles and business priorities
+  \item Build, maintain, and refactor integrations, replacing file uploads and direct database connections with Azure Data Factory pipelines that decouple consuming applications from producer APIs
+  \item Define integration contracts and delivery behavior, including pagination, error handling, and authentication, to make data ingestion more reliable and maintainable across producer-consumer boundaries
+  \item Publish APIs for a critical audit-portfolio application and design authentication and authorization patterns in Azure API Management, establishing a foundation for KPMG's agentic audit solution
+  \item Design data products for customer applications, supporting automation routines and reporting for quality-control activities
+  \item Guide solutions through design and implementation, balancing business needs, security, compliance, resilience, cost, and technical constraints; manage architecture risks and technical debt
+  \item Coordinate application portfolio consolidation for two merging KPMG entities and advise senior stakeholders on priorities, trade-offs, and delivery decisions
+}
+\jobseparator
+
+\job{Solutions Architect, Manager}{2022 -- 2024}{KPMG AG}{Zürich, CH}{
+  \item Designed architecture solutions for auditors and consultants, translating user and business needs into scalable, maintainable application designs
+  \item Improved system performance through tuning and efficiency initiatives, with focus on reliability and user experience
+  \item Partnered with implementation teams on architecture guidance, engineering practices, and supporting documentation
+  \item Established knowledge repositories and reusable guidance to support governance, knowledge sharing, and consistent delivery
+  \item Promoted Agile and DevOps practices, collaboration, automation, and continuous improvement within the team
+}
+\jobseparator
+
+\job{IT Architect}{2020 -- 2022}{Monext, Crédit Mutuel -- Arkéa}{Aix-en-Provence, FR}{
+  \item Defined architecture and design principles for scalable, secure enterprise solutions
+  \item Developed cloud governance frameworks and coached teams on DevOps to strengthen compliance and operational practices
+  \item Coordinated project delivery, scope, timelines, and stakeholder alignment across technology workstreams
+  \item Optimized CI/CD pipelines to improve deployment efficiency and reduce delivery errors
+  \item Assessed technology trends and their relevance to business needs and modernization roadmaps
+}
+
+\newpage
+\section*{Earlier Experience}
+\sectionrule
+\textbf{Systems Engineer} \hfill \textit{2016 -- 2020}\\
+Monext, Crédit Mutuel -- Arkéa, Aix-en-Provence, France\\
+Systems, virtualization, and storage infrastructure; procedure automation; PCI-DSS compliance support; Level 3 incidents; capacity planning and reporting.
+
+\textbf{Systems and Network Administrator} \hfill \textit{2013 -- 2016}\\
+Tessi Technologies -- Tessi, Bordeaux, France\\
+Systems, virtualization, storage, and backup administration; procedure automation; Level 3 incidents; capacity reporting; infrastructure design and estimates for tenders.
+
+\textbf{Systems, Network and Security Consultant} \hfill \textit{2009 -- 2013}\\
+Business Geografic -- CIRIL Group, Lyon, France\\
+Systems, network, virtualization, and storage administration; firewall security rules; client consulting and training; Level 2/3 incident analysis.
+
+\textbf{Systems Engineer (Trainee)} \hfill \textit{2008 -- 2009}\\
+Atos Worldline, Lyon, France: Linux administration, software delivery operations, project management, and Level 3 incident analysis.
+
+\textbf{Network Administrator (Trainee)} \hfill \textit{Apr -- Jun 2005}\\
+University of Oklahoma, Norman, US: developed an HTML/PHP web portal and evaluated and automated Cisco firewall security rules.
+
+\section*{Education}
+\sectionrule
+\textbf{Master in Computer Science, Systems \& Networks} \hfill \textit{2008 -- 2009}\\
+Université Claude Bernard Lyon I, Lyon, France\\
+\textbf{Bachelor, Computer Science} \hfill \textit{2006 -- 2007}\\
+Université de Clermont-Ferrand, France\\
+\textbf{Bachelor of Science, Computer Science} \hfill \textit{2005 -- 2006}\\
+Robert Gordon University, Aberdeen, UK\\
+\textbf{HND, Telecommunications \& Networks} \hfill \textit{2002 -- 2005}\\
+Université de Clermont-Ferrand, France
+
+\section*{Technical Skills}
+\sectionrule
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}l X@{}}
+Architecture & Solution design, application portfolios, trade-off analysis, modernization, buy vs. build \\
+Cloud and Platforms & Microsoft Azure, Azure Data Factory, Azure API Management, AWS, Databricks, Kubernetes, Terraform, Crossplane \\
+Integration and APIs & API contracts, pagination, error handling, authentication and authorization, producer-consumer decoupling, data products \\
+Delivery & CI/CD, ArgoCD, GitLab, DevOps, cloud governance, technical risk management \\
+Programming & Python, C\#, Java \\
+Systems & Linux, IBM AIX, Windows \\
+\end{tabularx}
+
+\section*{Languages}
+\sectionrule
+French (native) \textbullet\ English (C1; IELTS 7) \textbullet\ German (B1)
+
+\end{document}

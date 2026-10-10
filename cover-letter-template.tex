@@ -1,0 +1,52 @@
+\usepackage[letterpaper,margin=0.65in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fontawesome5}
+\usepackage{xcolor}
+\usepackage{parskip}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+\renewcommand{\baselinestretch}{1.0}
+
+\newcommand{\lettercontactheader}{%
+  \begin{center}
+    {\fontsize{23}{27}\selectfont\bfseries \personNameUpper\\[0.35em]}
+    {\large
+      \faPhone\ \personPhone\ \hspace{0.5em} \textbullet\ \hspace{0.5em} \personAddress\\
+      Contact me at \href{mailto:\personEmail}{\personEmail} or click \href{\personLinkedIn}{here} to connect
+      \href{\personLinkedIn}{\faLinkedin}
+    }
+  \end{center}
+}
+
+\begin{document}
+
+\lettercontactheader
+
+\vspace{2.5em}
+\begin{flushright}
+  \applicationDate
+\end{flushright}
+
+\recipientCompany\\
+\recipientDepartment\\
+\recipientAddress
+
+\vspace{1em}
+\textbf{\letterSubject}
+
+\vspace{0.5em}
+\letterSalutation
+
+\letterBody
+
+\vspace{2em}
+Sincerely,
+
+\vspace{1em}
+\textbf{\personName}
+
+\end{document}
